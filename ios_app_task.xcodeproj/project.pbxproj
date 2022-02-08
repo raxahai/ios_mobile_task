@@ -8,17 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		13AD08E127B2A8C900D44256 /* ios_app_taskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD08E027B2A8C900D44256 /* ios_app_taskApp.swift */; };
-		13AD08E327B2A8C900D44256 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD08E227B2A8C900D44256 /* ContentView.swift */; };
 		13AD08E527B2A8CB00D44256 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13AD08E427B2A8CB00D44256 /* Assets.xcassets */; };
 		13AD08E827B2A8CB00D44256 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13AD08E727B2A8CB00D44256 /* Preview Assets.xcassets */; };
+		13AD08F827B2B17100D44256 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD08F727B2B17100D44256 /* LoginView.swift */; };
+		13AD08FB27B2C00500D44256 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD08FA27B2C00500D44256 /* SignupView.swift */; };
+		13AD090227B2D92E00D44256 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD090127B2D92E00D44256 /* ForgotPasswordView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		13AD08DD27B2A8C900D44256 /* ios_app_task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_app_task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AD08E027B2A8C900D44256 /* ios_app_taskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_app_taskApp.swift; sourceTree = "<group>"; };
-		13AD08E227B2A8C900D44256 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		13AD08E427B2A8CB00D44256 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		13AD08E727B2A8CB00D44256 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		13AD08F727B2B17100D44256 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		13AD08FA27B2C00500D44256 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
+		13AD090127B2D92E00D44256 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +55,8 @@
 		13AD08DF27B2A8C900D44256 /* ios_app_task */ = {
 			isa = PBXGroup;
 			children = (
+				13AD08F227B2ADFB00D44256 /* features */,
 				13AD08E027B2A8C900D44256 /* ios_app_taskApp.swift */,
-				13AD08E227B2A8C900D44256 /* ContentView.swift */,
 				13AD08E427B2A8CB00D44256 /* Assets.xcassets */,
 				13AD08E627B2A8CB00D44256 /* Preview Content */,
 			);
@@ -65,6 +69,64 @@
 				13AD08E727B2A8CB00D44256 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		13AD08F227B2ADFB00D44256 /* features */ = {
+			isa = PBXGroup;
+			children = (
+				13AD08F527B2AF5A00D44256 /* forgot_password */,
+				13AD08F427B2AF4D00D44256 /* registration */,
+				13AD08F327B2AE0300D44256 /* login */,
+			);
+			path = features;
+			sourceTree = "<group>";
+		};
+		13AD08F327B2AE0300D44256 /* login */ = {
+			isa = PBXGroup;
+			children = (
+				13AD08F627B2B15900D44256 /* views */,
+			);
+			path = login;
+			sourceTree = "<group>";
+		};
+		13AD08F427B2AF4D00D44256 /* registration */ = {
+			isa = PBXGroup;
+			children = (
+				13AD08F927B2BFE800D44256 /* views */,
+			);
+			path = registration;
+			sourceTree = "<group>";
+		};
+		13AD08F527B2AF5A00D44256 /* forgot_password */ = {
+			isa = PBXGroup;
+			children = (
+				13AD090027B2D91C00D44256 /* views */,
+			);
+			path = forgot_password;
+			sourceTree = "<group>";
+		};
+		13AD08F627B2B15900D44256 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				13AD08F727B2B17100D44256 /* LoginView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		13AD08F927B2BFE800D44256 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				13AD08FA27B2C00500D44256 /* SignupView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		13AD090027B2D91C00D44256 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				13AD090127B2D92E00D44256 /* ForgotPasswordView.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +199,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				13AD08E327B2A8C900D44256 /* ContentView.swift in Sources */,
+				13AD08FB27B2C00500D44256 /* SignupView.swift in Sources */,
 				13AD08E127B2A8C900D44256 /* ios_app_taskApp.swift in Sources */,
+				13AD090227B2D92E00D44256 /* ForgotPasswordView.swift in Sources */,
+				13AD08F827B2B17100D44256 /* LoginView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
