@@ -13,6 +13,7 @@
 		13AD08F827B2B17100D44256 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD08F727B2B17100D44256 /* LoginView.swift */; };
 		13AD08FB27B2C00500D44256 /* SignupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD08FA27B2C00500D44256 /* SignupView.swift */; };
 		13AD090227B2D92E00D44256 /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD090127B2D92E00D44256 /* ForgotPasswordView.swift */; };
+		13AD090527B2E64D00D44256 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD090427B2E64D00D44256 /* SplashView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		13AD08F727B2B17100D44256 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		13AD08FA27B2C00500D44256 /* SignupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupView.swift; sourceTree = "<group>"; };
 		13AD090127B2D92E00D44256 /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		13AD090427B2E64D00D44256 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				13AD08E027B2A8C900D44256 /* ios_app_taskApp.swift */,
 				13AD08E427B2A8CB00D44256 /* Assets.xcassets */,
 				13AD08E627B2A8CB00D44256 /* Preview Content */,
+				13AD090427B2E64D00D44256 /* SplashView.swift */,
 			);
 			path = ios_app_task;
 			sourceTree = "<group>";
@@ -84,6 +87,7 @@
 		13AD08F327B2AE0300D44256 /* login */ = {
 			isa = PBXGroup;
 			children = (
+				13AD090327B2E2B000D44256 /* models */,
 				13AD08F627B2B15900D44256 /* views */,
 			);
 			path = login;
@@ -127,6 +131,13 @@
 				13AD090127B2D92E00D44256 /* ForgotPasswordView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		13AD090327B2E2B000D44256 /* models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +212,7 @@
 			files = (
 				13AD08FB27B2C00500D44256 /* SignupView.swift in Sources */,
 				13AD08E127B2A8C900D44256 /* ios_app_taskApp.swift in Sources */,
+				13AD090527B2E64D00D44256 /* SplashView.swift in Sources */,
 				13AD090227B2D92E00D44256 /* ForgotPasswordView.swift in Sources */,
 				13AD08F827B2B17100D44256 /* LoginView.swift in Sources */,
 			);

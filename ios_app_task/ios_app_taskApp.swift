@@ -9,9 +9,24 @@ import SwiftUI
 
 @main
 struct ios_app_taskApp: App {
+    @State private var isActive: Bool = false
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            VStack {
+                if self.isActive{
+                    LoginView()
+                }else{
+                    SplashView()
+                }
+                
+            }
+            .onAppear{
+                DispatchQueue.main.asyncAfter(deadline: .now() + 2.5){
+                    withAnimation{
+                        self.isActive = true
+                    }
+                }
+            }
         }
     }
 }
