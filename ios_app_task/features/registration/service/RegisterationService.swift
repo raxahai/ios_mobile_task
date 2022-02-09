@@ -1,5 +1,5 @@
 //
-//  LoginService.swift
+//  RegisterationService.swift
 //  ios_app_task
 //
 //  Created by Syed Raza Haider on 09/02/2022.
@@ -7,14 +7,17 @@
 
 import Foundation
 
-class LoginService{
-    public func authenticate(completionHandler: @escaping (LoginResponseModel) -> Void){
-        var result: LoginResponseModel?
-        var request = URLRequest(url: URL(string: Paths.login)!)
+class RegistrationService{
+    public func register(completionHandler: @escaping (RegisterResponseModel) -> Void){
+        var result: RegisterResponseModel?
+        var request = URLRequest(url: URL(string: "https://vyod.manaknightdigital.com/member/api/register")!)
         request.httpMethod = "POST"
         let json = [
-            "email":"raxa.hai@gmail.com",
-            "password":"1234567"
+            "email": "raxa.hai@gmail.com",
+            "password": "1234567",
+            "first_name": "Syed Raza",
+            "last_name": "Haider",
+            "code": "lx5kk07R"
         ] as [String:Any]
         do{
             let requestBody = try JSONSerialization.data(withJSONObject: json, options: .fragmentsAllowed)
@@ -34,7 +37,7 @@ class LoginService{
                 return
             }
             do{
-                result = try JSONDecoder().decode(LoginResponseModel.self, from: data)
+                result = try JSONDecoder().decode(RegisterResponseModel.self, from: data)
                 DispatchQueue.main.async {
                     completionHandler(result!)
                 }

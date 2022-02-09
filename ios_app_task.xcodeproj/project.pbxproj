@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1377BFD527B440E100DA3471 /* RegisterationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377BFD427B440E100DA3471 /* RegisterationService.swift */; };
+		1377BFD927B4452400DA3471 /* ExceptionHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377BFD827B4452400DA3471 /* ExceptionHandler.swift */; };
+		1377BFDC27B445A000DA3471 /* VerifyAccountModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377BFDB27B445A000DA3471 /* VerifyAccountModel.swift */; };
+		1377BFDE27B4483C00DA3471 /* ForgotPasswordService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377BFDD27B4483C00DA3471 /* ForgotPasswordService.swift */; };
+		1377BFE127B4498B00DA3471 /* ForgotPasswordResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377BFE027B4498B00DA3471 /* ForgotPasswordResponseModel.swift */; };
+		1377BFE427B44A2F00DA3471 /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377BFE327B44A2F00DA3471 /* globals.swift */; };
+		1377BFE727B44BE000DA3471 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377BFE627B44BE000DA3471 /* ForgotPasswordViewModel.swift */; };
+		1377BFE927B45B2A00DA3471 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377BFE827B45B2A00DA3471 /* AlertView.swift */; };
 		13AD08E127B2A8C900D44256 /* ios_app_taskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD08E027B2A8C900D44256 /* ios_app_taskApp.swift */; };
 		13AD08E527B2A8CB00D44256 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13AD08E427B2A8CB00D44256 /* Assets.xcassets */; };
 		13AD08E827B2A8CB00D44256 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13AD08E727B2A8CB00D44256 /* Preview Assets.xcassets */; };
@@ -22,6 +30,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1377BFD427B440E100DA3471 /* RegisterationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterationService.swift; sourceTree = "<group>"; };
+		1377BFD827B4452400DA3471 /* ExceptionHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExceptionHandler.swift; sourceTree = "<group>"; };
+		1377BFDB27B445A000DA3471 /* VerifyAccountModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyAccountModel.swift; sourceTree = "<group>"; };
+		1377BFDD27B4483C00DA3471 /* ForgotPasswordService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordService.swift; sourceTree = "<group>"; };
+		1377BFE027B4498B00DA3471 /* ForgotPasswordResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordResponseModel.swift; sourceTree = "<group>"; };
+		1377BFE327B44A2F00DA3471 /* globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
+		1377BFE627B44BE000DA3471 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		1377BFE827B45B2A00DA3471 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
 		13AD08DD27B2A8C900D44256 /* ios_app_task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_app_task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AD08E027B2A8C900D44256 /* ios_app_taskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_app_taskApp.swift; sourceTree = "<group>"; };
 		13AD08E427B2A8CB00D44256 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,6 +64,64 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1377BFD327B440CA00DA3471 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				1377BFD427B440E100DA3471 /* RegisterationService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		1377BFD627B4450000DA3471 /* core */ = {
+			isa = PBXGroup;
+			children = (
+				1377BFE227B44A2300DA3471 /* Global */,
+				1377BFD727B4450F00DA3471 /* Exception */,
+			);
+			path = core;
+			sourceTree = "<group>";
+		};
+		1377BFD727B4450F00DA3471 /* Exception */ = {
+			isa = PBXGroup;
+			children = (
+				1377BFD827B4452400DA3471 /* ExceptionHandler.swift */,
+			);
+			path = Exception;
+			sourceTree = "<group>";
+		};
+		1377BFDA27B4454800DA3471 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				1377BFDB27B445A000DA3471 /* VerifyAccountModel.swift */,
+				1377BFE027B4498B00DA3471 /* ForgotPasswordResponseModel.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		1377BFDF27B448CD00DA3471 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				1377BFDD27B4483C00DA3471 /* ForgotPasswordService.swift */,
+			);
+			path = service;
+			sourceTree = "<group>";
+		};
+		1377BFE227B44A2300DA3471 /* Global */ = {
+			isa = PBXGroup;
+			children = (
+				1377BFE327B44A2F00DA3471 /* globals.swift */,
+			);
+			path = Global;
+			sourceTree = "<group>";
+		};
+		1377BFE527B44BCE00DA3471 /* view_model */ = {
+			isa = PBXGroup;
+			children = (
+				1377BFE627B44BE000DA3471 /* ForgotPasswordViewModel.swift */,
+			);
+			path = view_model;
+			sourceTree = "<group>";
+		};
 		13AD08D427B2A8C900D44256 = {
 			isa = PBXGroup;
 			children = (
@@ -67,6 +141,7 @@
 		13AD08DF27B2A8C900D44256 /* ios_app_task */ = {
 			isa = PBXGroup;
 			children = (
+				1377BFD627B4450000DA3471 /* core */,
 				13AD08F227B2ADFB00D44256 /* features */,
 				13AD08E027B2A8C900D44256 /* ios_app_taskApp.swift */,
 				13AD08E427B2A8CB00D44256 /* Assets.xcassets */,
@@ -108,6 +183,7 @@
 		13AD08F427B2AF4D00D44256 /* registration */ = {
 			isa = PBXGroup;
 			children = (
+				1377BFD327B440CA00DA3471 /* service */,
 				13AD090E27B2F6D200D44256 /* view_model */,
 				13AD090B27B2F65700D44256 /* models */,
 				13AD08F927B2BFE800D44256 /* views */,
@@ -118,7 +194,10 @@
 		13AD08F527B2AF5A00D44256 /* forgot_password */ = {
 			isa = PBXGroup;
 			children = (
+				1377BFE527B44BCE00DA3471 /* view_model */,
+				1377BFDA27B4454800DA3471 /* models */,
 				13AD090027B2D91C00D44256 /* views */,
+				1377BFDF27B448CD00DA3471 /* service */,
 			);
 			path = forgot_password;
 			sourceTree = "<group>";
@@ -143,6 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				13AD090127B2D92E00D44256 /* ForgotPasswordView.swift */,
+				1377BFE827B45B2A00DA3471 /* AlertView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -259,14 +339,22 @@
 			files = (
 				13AD08FB27B2C00500D44256 /* SignupView.swift in Sources */,
 				13AD090A27B2F2F500D44256 /* LoginResponseModel.swift in Sources */,
+				1377BFD927B4452400DA3471 /* ExceptionHandler.swift in Sources */,
+				1377BFD527B440E100DA3471 /* RegisterationService.swift in Sources */,
 				13AD08E127B2A8C900D44256 /* ios_app_taskApp.swift in Sources */,
 				13AD090D27B2F66A00D44256 /* RegisterResponseModel.swift in Sources */,
 				13AD090827B2F2D500D44256 /* LoginViewModel.swift in Sources */,
 				13AD090527B2E64D00D44256 /* SplashView.swift in Sources */,
 				13AD090227B2D92E00D44256 /* ForgotPasswordView.swift in Sources */,
 				13AD091327B3018000D44256 /* LoginService.swift in Sources */,
+				1377BFDC27B445A000DA3471 /* VerifyAccountModel.swift in Sources */,
+				1377BFE927B45B2A00DA3471 /* AlertView.swift in Sources */,
 				13AD091027B2F6EE00D44256 /* RegisterViewModel.swift in Sources */,
+				1377BFE727B44BE000DA3471 /* ForgotPasswordViewModel.swift in Sources */,
+				1377BFE427B44A2F00DA3471 /* globals.swift in Sources */,
 				13AD08F827B2B17100D44256 /* LoginView.swift in Sources */,
+				1377BFE127B4498B00DA3471 /* ForgotPasswordResponseModel.swift in Sources */,
+				1377BFDE27B4483C00DA3471 /* ForgotPasswordService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

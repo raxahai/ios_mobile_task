@@ -8,5 +8,16 @@
 import Foundation
 
 class RegisterViewModel{
+    var registerServce: RegistrationService
     
+    init(registerService: RegistrationService){
+        self.registerServce = registerService
+    }
+    
+    public func register(){
+        registerServce.register{
+            data in
+            print(data.data.userID)
+        }
+    }
 }

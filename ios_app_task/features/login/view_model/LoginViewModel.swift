@@ -8,5 +8,15 @@
 import Foundation
 
 class LoginViewModel{
+    var loginService: LoginService
     
+    init(loginService: LoginService){
+        self.loginService = loginService
+    }
+    public func getData(){
+        loginService.authenticate{
+            response in
+            print(response.data.email)
+        }
+    }
 }

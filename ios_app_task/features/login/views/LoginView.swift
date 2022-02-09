@@ -11,6 +11,8 @@ import SwiftUI
 struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
+    
+    var loginViewModel: LoginViewModel = LoginViewModel(loginService: LoginService())
 
     var body: some View {
         NavigationView {
@@ -55,6 +57,7 @@ struct LoginView: View {
                 
                 Button("Login") {
                     print("hello")
+                    loginViewModel.getData()
                 }
                 .buttonStyle(.bordered)
                     .padding([.top],10)

@@ -11,8 +11,9 @@ struct SignupView: View {
     @State private var firstName: String = ""
     @State private var lastName: String = ""
     @State private var email: String = ""
-    @State private var dateOfBirth: String = ""
-    @State private var country: String = ""
+    @State private var password: String = ""
+    
+    var registrationViewModel: RegisterViewModel = RegisterViewModel(registerService: RegistrationService())
     
     var body: some View {
         ScrollView {
@@ -30,7 +31,7 @@ struct SignupView: View {
                     Text("Last name")
                     TextField(
                         "Last name",
-                        text: $firstName
+                        text: $lastName
                     )
                     .disableAutocorrection(true)
                     .padding([.bottom],10)
@@ -38,32 +39,26 @@ struct SignupView: View {
                     Text("Email")
                     TextField(
                         "Email address",
-                        text: $firstName
+                        text: $email
                     )
                     .disableAutocorrection(true)
                     .padding([.bottom],10)
                     
-                    Text("Date of birth")
+                    Text("Password")
                     TextField(
-                        "Date of birth",
-                        text: $dateOfBirth
+                        "Password",
+                        text: $password
                     )
                     .disableAutocorrection(true)
                     .padding([.bottom],10)
-                    
-                    Text("Country")
-                    TextField(
-                        "Country",
-                        text: $country
-                    )
-                    .disableAutocorrection(true)
-                    .padding([.bottom],10)
+                
                 }
                 .textFieldStyle(.roundedBorder)
             }
             
             Button("Register") {
                 print("registration initiated")
+                registrationViewModel.register()
             }
             .buttonStyle(.bordered)
 

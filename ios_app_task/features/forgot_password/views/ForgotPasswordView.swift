@@ -9,66 +9,38 @@ import SwiftUI
 
 struct ForgotPasswordView: View {
     @State private var email: String = ""
-    @State private var oldPassword: String = ""
-    @State private var newPassword: String = ""
-    @State private var confirmPassword: String = ""
+    @State private var verifyAccountEmail: String = ""
+    @State private var isShown: Bool = false
+    @State private var text: String = ""
+    
+    var forgotPasswordViewModel: ForgotPasswordViewModel = ForgotPasswordViewModel(forgotPasswordService: ForgotPasswordService())
     var body: some View {
-        ScrollView {
-            VStack(alignment:.leading) {
-                Text("Email")
-                TextField(
-                    "Email address",
-                    text: $email
-                )
-                .disableAutocorrection(true)
+        ZStack (alignment: .top) {
+            VStack(){
+                VStack(alignment:.leading) {
+                    Text("Email")
+                    TextField(
+                        "Email address",
+                        text: $email
+                    )
+                    .disableAutocorrection(true)
+                }
+                Button("Submit") {
+                    print("forgot password api call")
+                    forgotPasswordViewModel.forgotPassword()
+                    self.isShown = true
+                }
+                .buttonStyle(.bordered)
+                    .padding([.top],10)
+                    .foregroundColor(.black)
+                Spacer()
             }
-            .padding([.bottom],18)
+            .textFieldStyle(.roundedBorder)
+            .padding()
             
-            
-            VStack(alignment:.leading) {
-                Text("Old password")
-                SecureField(
-                    "Old password",
-                    text: $oldPassword
-                )
-                .disableAutocorrection(true)
-                
-            }
-            .padding([.bottom],18)
-            
-            VStack(alignment:.leading) {
-                Text("New password")
-                SecureField(
-                    "New password",
-                    text: $newPassword
-                )
-                .disableAutocorrection(true)
-                
-            }
-            .padding([.bottom],18)
-            
-            VStack(alignment:.leading) {
-                Text("Confirm password")
-                SecureField(
-                    "Confirm password",
-                    text: $oldPassword
-                )
-                .disableAutocorrection(true)
-                
-            }
-            .padding([.bottom],25)
-            
-            Button("Submit") {
-                print("forgot password api call")
-            }
-            .buttonStyle(.bordered)
-                .padding([.top],10)
-                .foregroundColor(.black)
-                
+            AlertView(title: "Verify account",isShown: $isShown, text: $text)
+        .navigationTitle("Forgot password")
         }
-        .textFieldStyle(.roundedBorder)
-    .padding()
-    .navigationTitle("Forgot password")
     }
 }
 
