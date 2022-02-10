@@ -8,15 +8,15 @@
 import Foundation
 
 class RegistrationService{
-    public func register(completionHandler: @escaping (RegisterResponseModel) -> Void){
+    public func register(firstName: String,lastName: String,email: String,password: String,completionHandler: @escaping (RegisterResponseModel) -> Void){
         var result: RegisterResponseModel?
         var request = URLRequest(url: URL(string: "https://vyod.manaknightdigital.com/member/api/register")!)
         request.httpMethod = "POST"
         let json = [
-            "email": "raxa.hai@gmail.com",
-            "password": "1234567",
-            "first_name": "Syed Raza",
-            "last_name": "Haider",
+            "email": email,
+            "password": password,
+            "first_name": firstName,
+            "last_name": lastName,
             "code": "lx5kk07R"
         ] as [String:Any]
         do{
@@ -36,13 +36,20 @@ class RegistrationService{
                 print("Something went wrong")
                 return
             }
-            do{
-                result = try JSONDecoder().decode(RegisterResponseModel.self, from: data)
-                DispatchQueue.main.async {
-                    completionHandler(result!)
+            if let httpResponse = response as? HTTPURLResponse {
+                switch (httpResponse.statusCode) {
+                    case 200:
+                        do{
+                            result = try JSONDecoder().decode(RegisterResponseModel.self, from: data)
+                            DispatchQueue.main.async {
+                                completionHandler(result!)
+                            }
+                        } catch{
+                            print("failed to convert \(error.localizedDescription)")
+                        }
+                    default:
+                        print(data)
                 }
-            } catch{
-                print("failed to convert \(error.localizedDescription)")
             }
         })
         task.resume()

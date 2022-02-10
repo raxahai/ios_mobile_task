@@ -14,8 +14,8 @@ class RegisterViewModel{
         self.registerServce = registerService
     }
     
-    public func register(){
-        registerServce.register{
+    public func register(firstName: String,lastName: String,email: String,password: String){
+        registerServce.register(firstName: firstName, lastName: lastName, email: email, password: password){
             data in
             print(data.data.userID)
         }

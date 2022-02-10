@@ -16,57 +16,49 @@ struct SignupView: View {
     var registrationViewModel: RegisterViewModel = RegisterViewModel(registerService: RegistrationService())
     
     var body: some View {
-        ScrollView {
-            VStack {
-                VStack (alignment: .leading) {
-                    
-                    Text("First name")
+        VStack {
+            Form {
+                Section{
                     TextField(
                         "First name",
                         text: $firstName
                     )
                     .disableAutocorrection(true)
-                    .padding([.bottom],10)
                     
-                    Text("Last name")
                     TextField(
                         "Last name",
                         text: $lastName
                     )
                     .disableAutocorrection(true)
-                    .padding([.bottom],10)
                     
-                    Text("Email")
                     TextField(
                         "Email address",
                         text: $email
                     )
                     .disableAutocorrection(true)
-                    .padding([.bottom],10)
+                    .autocapitalization(.none)
                     
-                    Text("Password")
-                    TextField(
+                    SecureField(
                         "Password",
                         text: $password
                     )
                     .disableAutocorrection(true)
-                    .padding([.bottom],10)
-                
+                    .autocapitalization(.none)
                 }
-                .textFieldStyle(.roundedBorder)
+                Section{
+                    HStack {
+                        Spacer()
+                        Button("Register") {
+                            print("registration initiated")
+                            registrationViewModel.register(firstName: firstName, lastName: lastName, email: email, password: password)
+                        }
+                        Spacer()
+                    }
+                }
+                .disabled(email.count < 11 || firstName.isEmpty || lastName.isEmpty || password.isEmpty)
             }
-            
-            Button("Register") {
-                print("registration initiated")
-                registrationViewModel.register()
-            }
-            .buttonStyle(.bordered)
-
-            .foregroundColor(.black)
-                
         }
-        .padding()
-        .navigationTitle("Registration")
+    .navigationTitle("Registration")
     }
 }
 
