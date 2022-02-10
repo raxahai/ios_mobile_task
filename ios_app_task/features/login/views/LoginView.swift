@@ -16,56 +16,43 @@ struct LoginView: View {
 
     var body: some View {
         NavigationView {
-            ScrollView {
-                VStack(alignment:.leading) {
-                    Text("Email")
+            Form {
+                Section{
                     TextField(
                         "Email address",
                         text: $email
                     )
                     .disableAutocorrection(true)
-                }
-                .padding([.bottom],18)
-                
-                
-                VStack(alignment:.leading) {
-                    Text("Password")
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
+                    
                     SecureField(
                         "Password",
                         text: $password
                     )
+                    .autocapitalization(.none)
                     .disableAutocorrection(true)
-                    
+                        
                 }
                 
-                HStack {
+                Section {
+                    Button("Login") {
+                        print("hello")
+                        loginViewModel.getData(email: email, password: password)
+                    }
+                }
+                .disabled(email.count < 5 || password.count < 5)
+                
+                Group {
                     NavigationLink(destination: ForgotPasswordView()) {
                         Text("Forgot password")
-                            .foregroundColor(.blue)
-                        .underline()
                     }
-                        
-                    Spacer()
                     
                     NavigationLink (destination: SignupView()) {
                         Text("Register")
-                            .foregroundColor(.blue)
-                        .underline()
                     }
                 }
-                .padding([.top],15)
-                
-                Button("Login") {
-                    print("hello")
-                    loginViewModel.getData()
-                }
-                .buttonStyle(.bordered)
-                    .padding([.top],10)
-                    .foregroundColor(.black)
-                    
             }
-            .textFieldStyle(.roundedBorder)
-        .padding()
         .navigationTitle("Login")
         }
     }

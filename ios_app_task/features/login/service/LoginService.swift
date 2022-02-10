@@ -8,13 +8,13 @@
 import Foundation
 
 class LoginService{
-    public func authenticate(completionHandler: @escaping (LoginResponseModel) -> Void){
+    public func authenticate(email: String,password: String,completionHandler: @escaping (LoginResponseModel) -> Void){
         var result: LoginResponseModel?
         var request = URLRequest(url: URL(string: Paths.login)!)
         request.httpMethod = "POST"
         let json = [
-            "email":"raxa.hai@gmail.com",
-            "password":"1234567"
+            "email": email,
+            "password": password
         ] as [String:Any]
         do{
             let requestBody = try JSONSerialization.data(withJSONObject: json, options: .fragmentsAllowed)

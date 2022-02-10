@@ -13,8 +13,8 @@ class LoginViewModel{
     init(loginService: LoginService){
         self.loginService = loginService
     }
-    public func getData(){
-        loginService.authenticate{
+    public func getData(email: String,password: String){
+        loginService.authenticate(email: email, password: password){
             response in
             print(response.data.email)
         }
