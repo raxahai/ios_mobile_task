@@ -24,6 +24,7 @@ struct AlertView: View {
             Text("Please verify your account")
             TextField("Email address", text: $text)
                 .textFieldStyle(RoundedBorderTextFieldStyle())
+                .autocapitalization(.none)
             HStack(spacing: 20) {
                 Button("Cancel") {
                     self.isShown = false

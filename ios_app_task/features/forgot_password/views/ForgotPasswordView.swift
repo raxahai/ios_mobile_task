@@ -11,34 +11,38 @@ struct ForgotPasswordView: View {
     @State private var email: String = ""
     @State private var verifyAccountEmail: String = ""
     @State private var isShown: Bool = false
-    @State private var text: String = ""
     
     var forgotPasswordViewModel: ForgotPasswordViewModel = ForgotPasswordViewModel(forgotPasswordService: ForgotPasswordService())
     var body: some View {
         ZStack (alignment: .top) {
-            VStack(){
-                VStack(alignment:.leading) {
-                    Text("Email")
+            
+            Form {
+                Section {
                     TextField(
                         "Email address",
                         text: $email
                     )
+                    .keyboardType(.emailAddress)
+                    .autocapitalization(.none)
                     .disableAutocorrection(true)
                 }
-                Button("Submit") {
-                    print("forgot password api call")
-                    forgotPasswordViewModel.forgotPassword()
-                    self.isShown = true
+                
+                Section {
+                    HStack{
+                        Spacer()
+                        Button("Submit") {
+                            print("forgot password api call")
+                            self.isShown = forgotPasswordViewModel.forgotPassword(email: email)
+                        }
+                        .disabled(email.count < 12)
+                        Spacer()
+                    }
                 }
-                .buttonStyle(.bordered)
-                    .padding([.top],10)
-                    .foregroundColor(.black)
-                Spacer()
             }
-            .textFieldStyle(.roundedBorder)
-            .padding()
             
-            AlertView(title: "Verify account",isShown: $isShown, text: $text)
+            AlertView(title: "Verify account",isShown: $isShown, text: $verifyAccountEmail)
+            
+            
         .navigationTitle("Forgot password")
         }
     }

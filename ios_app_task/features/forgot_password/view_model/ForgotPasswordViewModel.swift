@@ -24,13 +24,18 @@ class ForgotPasswordViewModel{
         return isSuccessful
     }
     
-    public func forgotPassword(){
-        forgotPasswordService.forgotPassword(completionHandler: {
+    public func forgotPassword(email: String)-> Bool{
+        var isVerifyAccount: Bool = false
+        forgotPasswordService.forgotPassword(email: email,completionHandler: {
             result in
-            guard self.verifyAccount() else {
+            print(result.message)
+            guard result.success else {
+                isVerifyAccount = self.verifyAccount()
+                print(isVerifyAccount)
                 print("verify account needed")
                 return;
             }
         })
+        return !isVerifyAccount
     }
 }

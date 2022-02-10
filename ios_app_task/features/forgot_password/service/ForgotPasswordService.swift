@@ -8,12 +8,12 @@
 import Foundation
 
 class ForgotPasswordService{
-    public func forgotPassword(completionHandler: @escaping (ForgotPasswordResponseModel) -> Void){
+    public func forgotPassword(email: String, completionHandler: @escaping (ForgotPasswordResponseModel) -> Void){
         var result: ForgotPasswordResponseModel?
         var request = URLRequest(url: URL(string: Paths.forgotPassword)!)
         request.httpMethod = "POST"
         let json = [
-            "email": "raxa.hai@gmail.com",
+            "email": email,
         ] as [String:Any]
         do{
             let requestBody = try JSONSerialization.data(withJSONObject: json, options: .fragmentsAllowed)
