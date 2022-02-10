@@ -6,17 +6,25 @@
 //
 
 import Foundation
+import Combine
 
-class LoginViewModel{
+class LoginViewModel: ObservableObject{
     var loginService: LoginService
     
     init(loginService: LoginService){
         self.loginService = loginService
     }
+    
+    @Published var isLoggedIn: Bool = false
+    
     public func getData(email: String,password: String){
         loginService.authenticate(email: email, password: password){
             response in
-            print(response.data.email)
+            guard response.success else{
+                self.isLoggedIn = false
+                return
+            }
+            self.isLoggedIn = true
         }
     }
 }

@@ -12,12 +12,12 @@ struct LoginView: View {
     @State private var email: String = ""
     @State private var password: String = ""
     
-    var loginViewModel: LoginViewModel = LoginViewModel(loginService: LoginService())
+    @ObservedObject var loginViewModel: LoginViewModel = LoginViewModel(loginService: LoginService())
 
     var body: some View {
         NavigationView {
             Form {
-                Section{
+                Section {
                     TextField(
                         "Email address",
                         text: $email
@@ -54,6 +54,14 @@ struct LoginView: View {
                 }
             }
         .navigationTitle("Login")
+        }
+    }
+    @ViewBuilder
+    var navigateHomeView: some View {
+        if loginViewModel.isLoggedIn {
+            HomeView()
+        } else {
+            Text("No Home found")
         }
     }
 }

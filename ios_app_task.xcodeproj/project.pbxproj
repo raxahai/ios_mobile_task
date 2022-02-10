@@ -15,6 +15,7 @@
 		1377BFE427B44A2F00DA3471 /* globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377BFE327B44A2F00DA3471 /* globals.swift */; };
 		1377BFE727B44BE000DA3471 /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377BFE627B44BE000DA3471 /* ForgotPasswordViewModel.swift */; };
 		1377BFE927B45B2A00DA3471 /* AlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1377BFE827B45B2A00DA3471 /* AlertView.swift */; };
+		13A15C4127B585AA00C50F2F /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13A15C4027B585AA00C50F2F /* HomeView.swift */; };
 		13AD08E127B2A8C900D44256 /* ios_app_taskApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AD08E027B2A8C900D44256 /* ios_app_taskApp.swift */; };
 		13AD08E527B2A8CB00D44256 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13AD08E427B2A8CB00D44256 /* Assets.xcassets */; };
 		13AD08E827B2A8CB00D44256 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13AD08E727B2A8CB00D44256 /* Preview Assets.xcassets */; };
@@ -38,6 +39,7 @@
 		1377BFE327B44A2F00DA3471 /* globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = globals.swift; sourceTree = "<group>"; };
 		1377BFE627B44BE000DA3471 /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
 		1377BFE827B45B2A00DA3471 /* AlertView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertView.swift; sourceTree = "<group>"; };
+		13A15C4027B585AA00C50F2F /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		13AD08DD27B2A8C900D44256 /* ios_app_task.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ios_app_task.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13AD08E027B2A8C900D44256 /* ios_app_taskApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ios_app_taskApp.swift; sourceTree = "<group>"; };
 		13AD08E427B2A8CB00D44256 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -122,6 +124,22 @@
 			path = view_model;
 			sourceTree = "<group>";
 		};
+		13A15C3E27B5859800C50F2F /* home */ = {
+			isa = PBXGroup;
+			children = (
+				13A15C3F27B5859D00C50F2F /* views */,
+			);
+			path = home;
+			sourceTree = "<group>";
+		};
+		13A15C3F27B5859D00C50F2F /* views */ = {
+			isa = PBXGroup;
+			children = (
+				13A15C4027B585AA00C50F2F /* HomeView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
 		13AD08D427B2A8C900D44256 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +180,7 @@
 		13AD08F227B2ADFB00D44256 /* features */ = {
 			isa = PBXGroup;
 			children = (
+				13A15C3E27B5859800C50F2F /* home */,
 				13AD08F527B2AF5A00D44256 /* forgot_password */,
 				13AD08F427B2AF4D00D44256 /* registration */,
 				13AD08F327B2AE0300D44256 /* login */,
@@ -355,6 +374,7 @@
 				13AD08F827B2B17100D44256 /* LoginView.swift in Sources */,
 				1377BFE127B4498B00DA3471 /* ForgotPasswordResponseModel.swift in Sources */,
 				1377BFDE27B4483C00DA3471 /* ForgotPasswordService.swift in Sources */,
+				13A15C4127B585AA00C50F2F /* HomeView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

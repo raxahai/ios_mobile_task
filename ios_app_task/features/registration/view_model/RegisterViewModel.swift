@@ -14,10 +14,15 @@ class RegisterViewModel{
         self.registerServce = registerService
     }
     
+    @Published var isRegisterSuccess: Bool = false
+    
     public func register(firstName: String,lastName: String,email: String,password: String){
         registerServce.register(firstName: firstName, lastName: lastName, email: email, password: password){
             data in
-            print(data.data.userID)
+            guard data.success else {
+                self.isRegisterSuccess = data.success
+                return
+            }
         }
     }
 }

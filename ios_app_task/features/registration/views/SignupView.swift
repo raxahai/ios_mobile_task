@@ -18,6 +18,10 @@ struct SignupView: View {
     var body: some View {
         VStack {
             Form {
+                Group{
+                    isRegistered
+                }
+                
                 Section{
                     TextField(
                         "First name",
@@ -59,6 +63,15 @@ struct SignupView: View {
             }
         }
     .navigationTitle("Registration")
+    }
+    
+    @ViewBuilder
+    var isRegistered: some View{
+        if registrationViewModel.isRegisterSuccess{
+            Text("Register succesful")
+        }else{
+            Text("Not yet registered")
+        }
     }
 }
 
